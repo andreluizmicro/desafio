@@ -28,7 +28,7 @@ class Cnpj
 
     private function isValid(): bool
     {
-        $cnpj = str_replace(['.', '-'], '', $this->value);
+        $cnpj = str_replace(['.', '-', '/'], '', $this->value);
 
         if (preg_match('/^\d{14}$/', $cnpj)) {
             return true;
